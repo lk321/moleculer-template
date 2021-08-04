@@ -1,0 +1,47 @@
+{
+    "name": "moleculer-template",
+    "version": "1.0.0",
+    "description": "My Moleculer-based microservice",
+    "scripts": {
+        "dev": "moleculer-runner --repl --hot --config moleculer.dev.config.js service.js",
+        "start": "moleculer-runner service.js",
+        "ci": "jest --watch",
+        "test": "jest --coverage",
+        "test:ci": "echo 'All test passed'",
+        "build": "echo 'No build? ... ok!'",
+        "lint": "eslint . --ext .js,.jsx --fix",
+        "format:check": "prettier --ignore-path .gitignore --check .",
+        "format": "prettier --ignore-path .gitignore -w .",
+        "prepare": "husky install"
+    },
+    "keywords": [
+        "microservices",
+        "moleculer"
+    ],
+    "author": "Antonio Orozco",
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-prettier": "^3.4.0",
+        "jest": "^27.0.6",
+        "jest-cli": "^27.0.6",
+        "moleculer-repl": "^0.6.6",
+        "prettier": "^2.3.2",
+        "husky": "^7.0.0"
+    },
+    "dependencies": {
+        "moleculer": "^0.14.16",
+        "nats": "^2.1.0"
+    },
+    "engines": {
+        "node": ">= 10.x.x"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn run lint",
+            "pre-push": "yarn run lint && yarn run test"
+        }
+    }
+}

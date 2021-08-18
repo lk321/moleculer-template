@@ -5,3 +5,7 @@ npm-debug.log
 stats.json
 yarn-error.log
 .env
+build/
+yarn.lock
+package-lock.json
+public

@@ -19,7 +19,7 @@ yarn lint ||
         false; 
 )
 
-# Check tsconfig standards
+# Check testing
 yarn test ||
 (
     echo '🤡😂❌🤡 Test check failed. 🤡😂❌🤡
